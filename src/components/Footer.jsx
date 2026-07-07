@@ -1,75 +1,186 @@
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const footerLinks = [
-    { title: "Research Team", links: ["Our Team", "Collaborators", "Partners"] },
-    { title: "Contact", links: ["Email", "LinkedIn", "Twitter"] },
-    { title: "Methodology", links: ["Survey Design", "Data Analysis", "Publications"] },
-    { title: "Dashboard", links: ["Live Dashboard", "Data Sources", "API"] },
-  ];
-
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-purple-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-5 gap-12 mb-12">
-          {/* Logo and Description */}
-          <div className="md:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent mb-4"
-            >
+    <footer 
+      className="text-white"
+      style={{
+        background: 'linear-gradient(135deg, #061B54, #0B2F7A, #123C8C)',
+        paddingTop: '80px',
+        paddingBottom: '60px',
+      }}
+    >
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          {/* Column 1: WE-AI Initiative */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold mb-6" style={{ color: '#DBEAFE' }}>
               WE-AI Initiative
-            </motion.div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Empowering women-led MSMEs through AI research and digital transformation initiatives in Malaysia.
+            </h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              Empowering women-led MSMEs through evidence-based AI research,
+              digital transformation, and inclusive innovation.
             </p>
-          </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-lg">📍</span>
+                <span>Malaysia</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-lg">📧</span>
+                <a href="mailto:research@we-ai.my" className="hover:text-white transition-colors">
+                  research@we-ai.my
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-lg">🌐</span>
+                <a href="https://www.we-ai.my" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  www.we-ai.my
+                </a>
+              </div>
+            </div>
+          </motion.div>
 
-          {/* Footer Links */}
-          {footerLinks.map((section, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <h4 className="font-bold mb-4 text-yellow-400">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {/* Column 2: Research */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-xl font-bold mb-6" style={{ color: '#DBEAFE' }}>
+              Research
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#about" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  About Research
+                </a>
+              </li>
+              <li>
+                <a href="#objectives" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Objectives
+                </a>
+              </li>
+              <li>
+                <a href="#methodology" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Methodology
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Publications
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Column 3: Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-xl font-bold mb-6" style={{ color: '#DBEAFE' }}>
+              Dashboard
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#dashboard" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Live Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#dashboard" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Survey Results
+                </a>
+              </li>
+              <li>
+                <a href="#dashboard" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Data Sources
+                </a>
+              </li>
+              <li>
+                <a href="#dashboard" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  AI Insights
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Column 4: Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-xl font-bold mb-6" style={{ color: '#DBEAFE' }}>
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#home" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#dashboard" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </motion.div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm">
-            © 2026 WE-AI Initiative. All rights reserved.
-          </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Terms of Service
-            </a>
+          <div 
+            className="mb-8"
+            style={{
+              height: '1px',
+              background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+            }}
+          />
+          
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-gray-300 text-sm mb-1">
+                © 2026 WE-AI Initiative
+              </p>
+              <p className="text-gray-400 text-xs">
+                Faculty of Entrepreneurship and Business
+              </p>
+              <p className="text-gray-400 text-xs">
+                Universiti Malaysia Kelantan
+              </p>
+            </div>
+            
+            <div className="text-center md:text-right">
+              <p className="text-gray-400 text-xs">
+                Powered by Google Forms + Google Sheets + React
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

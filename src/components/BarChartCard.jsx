@@ -22,7 +22,7 @@ export default function BarChartCard({ title, data }) {
           <YAxis />
           <Tooltip />
 
-          <Bar dataKey="value" fill="#002879" radius={[8, 8, 0, 0]}>
+          <Bar dataKey="value" fill="#2563EB" radius={[8, 8, 0, 0]}>
             <LabelList dataKey="value" position="top" />
           </Bar>
         </BarChart>

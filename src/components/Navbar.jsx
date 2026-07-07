@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className={`text-2xl font-bold ${scrolled ? 'bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent' : 'text-white'}`}
+            className={`text-2xl font-bold ${scrolled ? 'bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent' : 'text-white'}`}
           >
             WE-AI Initiative
           </motion.div>
@@ -49,7 +49,7 @@ export default function Navbar() {
                 href={link.href}
                 whileHover={{ scale: 1.1 }}
                 className={`text-sm font-medium transition-colors ${
-                  scrolled ? "text-gray-700 hover:text-purple-600" : "text-white hover:text-yellow-400"
+                  scrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-yellow-400"
                 }`}
               >
                 {link.name}
@@ -62,7 +62,7 @@ export default function Navbar() {
             href="#dashboard"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-medium text-sm shadow-lg hover:shadow-xl transition-shadow"
+            className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full font-medium text-sm shadow-lg hover:shadow-xl transition-shadow"
           >
             View Dashboard
           </motion.a>

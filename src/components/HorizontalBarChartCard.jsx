@@ -23,7 +23,7 @@ export default function HorizontalBarChartCard({ title, data }) {
           <YAxis dataKey="name" type="category" width={75} />
           <Tooltip />
 
-          <Bar dataKey="value" fill="#002879" radius={[0, 8, 8, 0]}>
+          <Bar dataKey="value" fill="#2563EB" radius={[0, 8, 8, 0]}>
             <LabelList dataKey="value" position="right" />
           </Bar>
         </BarChart>

@@ -53,7 +53,7 @@ export default function Methodology() {
 
         <div className="relative">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-200 via-blue-200 to-purple-200 transform -translate-y-1/2" />
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-200 to-blue-200 transform -translate-y-1/2" />
 
           <div className="grid md:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -67,7 +67,7 @@ export default function Methodology() {
                 className="relative"
               >
                 {/* Step Card */}
-                <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all relative z-10">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all relative z-10">
                   <div className="text-5xl mb-4">{step.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
@@ -79,7 +79,7 @@ export default function Methodology() {
                     <motion.div
                       animate={{ x: [0, 10, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
-                      className="text-purple-600 text-3xl"
+                      className="text-blue-600 text-3xl"
                     >
                       →
                     </motion.div>

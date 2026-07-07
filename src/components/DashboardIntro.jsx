@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function DashboardIntro() {
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -11,7 +11,7 @@ export default function DashboardIntro() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <motion.span
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}

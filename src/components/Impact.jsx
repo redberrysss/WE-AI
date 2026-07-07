@@ -74,7 +74,7 @@ export default function Impact() {
   }, [isInView]);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white" ref={ref}>
+    <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-900 to-blue-900 text-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

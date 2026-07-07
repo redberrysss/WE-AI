@@ -20,7 +20,7 @@ export default function AboutResearch() {
   ];
 
   return (
-    <section id="about" className="relative py-24" style={{ background: '#fff7fb' }}>
+    <section id="about" className="relative py-24" style={{ background: '#F8FAFC' }}>
       <div className="max-w-7xl mx-auto px-6" style={{ padding: '90px 8%' }}>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}

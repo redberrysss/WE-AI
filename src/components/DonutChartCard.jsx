@@ -7,7 +7,7 @@ import {
   Legend,
 } from "recharts";
 
-const COLORS = ["#002879", "#FBD015", "#0056b3", "#ffc107"];
+const COLORS = ["#2563EB", "#FBBF24", "#1D4ED8", "#F59E0B"];
 
 export default function DonutChartCard({ title, data }) {
   return (

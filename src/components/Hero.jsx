@@ -32,7 +32,7 @@ export default function Hero() {
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/10 rounded-full blur-3xl" />
       </div>
@@ -60,7 +60,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="text-xl mb-8 leading-relaxed"
-            style={{ color: '#e9ddff' }}
+            style={{ color: '#DBEAFE' }}
           >
             A diagnostic research platform to understand AI awareness, adoption patterns, barriers, risks, and support needs among women-led MSMEs.
           </motion.p>
@@ -125,8 +125,8 @@ export default function Hero() {
             <svg className="w-full h-full" viewBox="0 0 400 400">
               <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: "#8B5CF6", stopOpacity: 0.8 }} />
-                  <stop offset="100%" style={{ stopColor: "#3B82F6", stopOpacity: 0.8 }} />
+                  <stop offset="0%" style={{ stopColor: "#2563EB", stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: "#1D4ED8", stopOpacity: 0.8 }} />
                 </linearGradient>
               </defs>
               
@@ -159,7 +159,7 @@ export default function Hero() {
                   cx={80 + Math.random() * 240}
                   cy={80 + Math.random() * 240}
                   r="8"
-                  fill="#8B5CF6"
+                  fill="#2563EB"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.7, 1, 0.7],
@@ -198,7 +198,7 @@ export default function Hero() {
                 duration: 4,
                 repeat: Infinity,
               }}
-              className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl backdrop-blur-sm opacity-60"
+              className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl backdrop-blur-sm opacity-60"
             />
             <motion.div
               animate={{
@@ -209,7 +209,7 @@ export default function Hero() {
                 repeat: Infinity,
                 delay: 1,
               }}
-              className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl backdrop-blur-sm opacity-60"
+              className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl backdrop-blur-sm opacity-60"
             />
           </div>
         </motion.div>

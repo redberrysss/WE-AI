@@ -38,7 +38,7 @@ export default function ResearchObjectives() {
   ];
 
   return (
-    <section id="objectives" className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section id="objectives" className="py-24 bg-gradient-to-br from-blue-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,10 +66,10 @@ export default function ResearchObjectives() {
               whileHover={{ scale: 1.02, y: -5 }}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-blue-100 rounded-bl-full opacity-50" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-100 rounded-bl-full opacity-50" />
               <div className="relative z-10">
                 <div className="flex items-start gap-6">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent opacity-20">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent opacity-20">
                     {objective.number}
                   </div>
                   <div className="flex-1">
