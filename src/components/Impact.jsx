@@ -1,120 +1,89 @@
-import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-// Replace with:
-// import womenIcon from "../assets/icons/women.svg";
-// import growthIcon from "../assets/icons/growth.svg";
-// import aiIcon from "../assets/icons/ai.svg";
-// import policyIcon from "../assets/icons/policy.svg";
+import { motion } from "framer-motion";
+import { Users, TrendingUp, Cpu, ClipboardList } from "lucide-react";
 
-export default function Impact() {
+function Counter({ end, suffix = "", duration = 2000, label, icon, color }) {
+  const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [counters, setCounters] = useState({ women: 0, digital: 0, ai: 0, policy: 0 });
-
-  const impacts = [
-    {
-      title: "Women Entrepreneurs",
-      value: 152,
-      suffix: "+",
-      icon: "👩‍💼", // Replace with: <img src={womenIcon} alt="Women" className="w-12 h-12" />
-      description: "Women-led MSMEs engaged",
-      iconPath: "src/assets/icons/women.svg",
-    },
-    {
-      title: "Digital Transformation",
-      value: 89,
-      suffix: "%",
-      icon: "📈", // Replace with: <img src={growthIcon} alt="Growth" className="w-12 h-12" />
-      description: "Showing digital readiness",
-      iconPath: "src/assets/icons/growth.svg",
-    },
-    {
-      title: "AI Readiness",
-      value: 67,
-      suffix: "%",
-      icon: "🤖", // Replace with: <img src={aiIcon} alt="AI" className="w-12 h-12" />
-      description: "Ready for AI adoption",
-      iconPath: "src/assets/icons/ai.svg",
-    },
-    {
-      title: "Policy Recommendations",
-      value: 12,
-      suffix: "",
-      icon: "📋", // Replace with: <img src={policyIcon} alt="Policy" className="w-12 h-12" />
-      description: "Key policy insights generated",
-      iconPath: "src/assets/icons/policy.svg",
-    },
-  ];
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
-      const duration = 2000;
-      const steps = 60;
-      const stepTime = duration / steps;
-
-      let currentStep = 0;
-      const interval = setInterval(() => {
-        if (currentStep < steps) {
-          currentStep++;
-          const progress = currentStep / steps;
-          setCounters({
-            women: Math.floor(152 * progress),
-            digital: Math.floor(89 * progress),
-            ai: Math.floor(67 * progress),
-            policy: Math.floor(12 * progress),
-          });
-        } else {
-          clearInterval(interval);
-          setCounters({ women: 152, digital: 89, ai: 67, policy: 12 });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const startTime = Date.now();
+          const step = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
         }
-      }, stepTime);
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration, hasAnimated]);
 
-      return () => clearInterval(interval);
-    }
-  }, [isInView]);
+  const colorMap = {
+    blue: { bg: "bg-blue-50", text: "text-blue-600", from: "from-blue-600" },
+    purple: { bg: "bg-purple-50", text: "text-purple-600", from: "from-purple-600" },
+    indigo: { bg: "bg-indigo-50", text: "text-indigo-600", from: "from-indigo-600" },
+    green: { bg: "bg-emerald-50", text: "text-emerald-600", from: "from-emerald-600" },
+  };
+  const c = colorMap[color] || colorMap.blue;
 
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-900 to-blue-900 text-white" ref={ref}>
+    <div ref={ref} className="text-center p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+      <div className={`w-12 h-12 rounded-2xl ${c.bg} flex items-center justify-center ${c.text} mx-auto mb-5`}>
+        {icon}
+      </div>
+      <span className={`stat-value bg-gradient-to-r ${c.from} to-gray-900 bg-clip-text text-transparent`}>
+        {count}{suffix}
+      </span>
+      <p className="text-gray-500 text-sm font-medium mt-2">{label}</p>
+    </div>
+  );
+}
+
+export default function Impact() {
+  const impacts = [
+    { value: 152, suffix: "+", label: "Women Entrepreneurs Engaged", icon: <Users size={22} />, color: "blue" },
+    { value: 89, suffix: "%", label: "Showing Digital Readiness", icon: <TrendingUp size={22} />, color: "purple" },
+    { value: 67, suffix: "%", label: "Ready for AI Adoption", icon: <Cpu size={22} />, color: "indigo" },
+    { value: 12, suffix: "", label: "Policy Recommendations", icon: <ClipboardList size={22} />, color: "green" },
+  ];
+
+  return (
+    <section className="py-30 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Research Impact
-          </h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Measurable outcomes from our research initiative
+          <div className="section-badge mb-5 mx-auto w-fit">Key Statistics</div>
+          <h2 className="section-title mb-4">Research Impact</h2>
+          <p className="section-subtitle mx-auto">
+            Measurable outcomes from our research initiative driving change for women-led businesses
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {impacts.map((impact, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="text-5xl mb-4">{impact.icon}</div>
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
-                className="text-5xl font-bold mb-2 bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent"
-              >
-                {index === 0 ? counters.women : index === 1 ? counters.digital : index === 2 ? counters.ai : counters.policy}
-                {impact.suffix}
-              </motion.div>
-              <h3 className="text-xl font-bold mb-2">{impact.title}</h3>
-              <p className="text-gray-300 text-sm">{impact.description}</p>
+              <Counter {...impact} />
             </motion.div>
           ))}
         </div>

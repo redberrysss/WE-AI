@@ -1,93 +1,81 @@
 import { motion } from "framer-motion";
-// Replace with:
-// import deskReviewIcon from "../assets/icons/desk-review.svg";
-// import surveyIcon from "../assets/icons/survey.svg";
-// import fgdIcon from "../assets/icons/fgd.svg";
-// import dashboardIcon from "../assets/icons/dashboard.svg";
+import { BookOpen, BarChart3, MessageCircle, LineChart } from "lucide-react";
+import { AnalyticsIllustration } from "./Illustrations";
+
+const steps = [
+  {
+    title: "Desk Review",
+    description: "Comprehensive literature review and analysis of existing research on AI adoption in MSMEs and women entrepreneurship.",
+    icon: <BookOpen size={22} />,
+  },
+  {
+    title: "Quantitative Survey",
+    description: "Nationwide survey targeting women-led MSMEs across various sectors and regions in Malaysia.",
+    icon: <BarChart3 size={22} />,
+  },
+  {
+    title: "KII & FGD",
+    description: "Key Informant Interviews and Focus Group Discussions with stakeholders, experts, and women entrepreneurs.",
+    icon: <MessageCircle size={22} />,
+  },
+  {
+    title: "Diagnostic Dashboard",
+    description: "Advanced data analysis and development of diagnostic dashboard for real-time insights visualization.",
+    icon: <LineChart size={22} />,
+  },
+];
 
 export default function Methodology() {
-  const steps = [
-    {
-      title: "Desk Review",
-      description: "Comprehensive literature review and analysis of existing research on AI adoption in MSMEs",
-      icon: "📚", // Replace with: <img src={deskReviewIcon} alt="Desk Review" className="w-12 h-12" />
-      iconPath: "src/assets/icons/desk-review.svg",
-    },
-    {
-      title: "Quantitative Survey",
-      description: "Nationwide survey targeting women-led MSMEs across various sectors and regions in Malaysia",
-      icon: "📊", // Replace with: <img src={surveyIcon} alt="Survey" className="w-12 h-12" />
-      iconPath: "src/assets/icons/survey.svg",
-    },
-    {
-      title: "KII & FGD",
-      description: "Key Informant Interviews and Focus Group Discussions with stakeholders and experts",
-      icon: "💬", // Replace with: <img src={fgdIcon} alt="FGD" className="w-12 h-12" />
-      iconPath: "src/assets/icons/fgd.svg",
-    },
-    {
-      title: "Diagnostic Dashboard",
-      description: "Advanced data analysis and development of diagnostic dashboard for insights visualisation",
-      icon: "📈", // Replace with: <img src={dashboardIcon} alt="Dashboard" className="w-12 h-12" />
-      iconPath: "src/assets/icons/dashboard.svg",
-    },
-  ];
-
   return (
-    <section id="methodology" className="py-24 bg-white">
+    <section className="py-30 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Research Methodology
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive approach combines multiple research methods for robust insights
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="section-badge mb-5 w-fit">Our Process</div>
+            <h2 className="section-title mb-4">Research Methodology</h2>
+            <p className="section-subtitle mb-10" style={{ maxWidth: "100%" }}>
+              Our comprehensive approach combines multiple research methods for robust insights and actionable recommendations.
+            </p>
 
-        <div className="relative">
-          {/* Connecting Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-200 to-blue-200 transform -translate-y-1/2" />
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ y: -10 }}
-                className="relative"
-              >
-                {/* Step Card */}
-                <div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all relative z-10">
-                  <div className="text-5xl mb-4">{step.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
-
-                {/* Arrow Indicator */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:flex absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 z-20">
-                    <motion.div
-                      animate={{ x: [0, 10, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                      className="text-blue-600 text-3xl"
-                    >
-                      →
-                    </motion.div>
+            <div className="space-y-4">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ x: 4 }}
+                  className="flex gap-5 p-5 rounded-2xl bg-gray-50 hover:bg-blue-50/50 transition-all"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center text-blue-600 shrink-0">
+                    {step.icon}
                   </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-gray-900">{step.title}</h3>
+                      <span className="text-xs text-gray-400 font-medium">Step {index + 1}</span>
+                    </div>
+                    <p className="text-sm text-gray-500 leading-relaxed">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <AnalyticsIllustration className="w-full" />
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,0 +1,153 @@
+export const trainingSummary = {
+  totalParticipants: 78,
+  averageScore: {
+    before: 4.8,
+    after: 8.56,
+    max: 10,
+  },
+  skills: [
+    {
+      id: 1,
+      name: "Clearer picture of which business areas can benefit from AI",
+      before: 2.4,
+      after: 3.69,
+      afterBreakdown: { 4: 53, 3: 24, 2: 0, 1: 0 },
+    },
+    {
+      id: 2,
+      name: "Better understanding of what AI can and cannot do",
+      before: 2.6,
+      after: 3.62,
+      afterBreakdown: { 4: 49, 3: 28, 2: 1, 1: 0 },
+    },
+    {
+      id: 3,
+      name: "Know how to choose AI tools suited to business needs",
+      before: 2.0,
+      after: 3.69,
+      afterBreakdown: { 4: 53, 3: 24, 2: 0, 1: 0 },
+    },
+    {
+      id: 4,
+      name: "Ready to use practised AI tools for real business tasks",
+      before: 2.2,
+      after: 3.65,
+      afterBreakdown: { 4: 51, 3: 27, 2: 0, 1: 0 },
+    },
+    {
+      id: 5,
+      name: "Know how to write clear prompts for useful AI results",
+      before: 1.8,
+      after: 3.55,
+      afterBreakdown: { 4: 45, 3: 31, 2: 2, 1: 0 },
+    },
+    {
+      id: 6,
+      name: "Know how to verify AI output accuracy and suitability",
+      before: 1.9,
+      after: 3.50,
+      afterBreakdown: { 4: 40, 3: 37, 2: 1, 1: 0 },
+    },
+    {
+      id: 7,
+      name: "Can see how AI supports managing or growing business",
+      before: 2.5,
+      after: 3.59,
+      afterBreakdown: { 4: 46, 3: 32, 2: 0, 1: 0 },
+    },
+    {
+      id: 8,
+      name: "Curious to explore more helpful AI tools",
+      before: 2.8,
+      after: 3.71,
+      afterBreakdown: { 4: 55, 3: 23, 2: 0, 1: 0 },
+    },
+    {
+      id: 9,
+      name: "Confident to continue learning about AI independently",
+      before: 2.3,
+      after: 3.68,
+      afterBreakdown: { 4: 53, 3: 25, 2: 0, 1: 0 },
+    },
+    {
+      id: 10,
+      name: "More confident to grow and strengthen business",
+      before: 2.7,
+      after: 3.67,
+      afterBreakdown: { 4: 52, 3: 26, 2: 0, 1: 0 },
+    },
+    {
+      id: 11,
+      name: "Know how to use AI tools responsibly and safely",
+      before: 2.3,
+      after: 3.64,
+      afterBreakdown: { 4: 49, 3: 28, 2: 0, 1: 0 },
+    },
+  ],
+  satisfaction: [
+    {
+      name: "Content & Topics Covered",
+      avg: 3.70,
+      breakdown: { 4: 54, 3: 23, 2: 0, 1: 0 },
+    },
+    {
+      name: "Session Flow & Structure",
+      avg: 3.70,
+      breakdown: { 4: 54, 3: 23, 2: 0, 1: 0 },
+    },
+    {
+      name: "Activities & Individual Exercises",
+      avg: 3.58,
+      breakdown: { 4: 48, 3: 26, 2: 3, 1: 0 },
+    },
+    {
+      name: "Overall Session Duration (4hrs)",
+      avg: 3.53,
+      breakdown: { 4: 43, 3: 32, 2: 2, 1: 0 },
+    },
+    {
+      name: "Time Allocated per Activity",
+      avg: 3.45,
+      breakdown: { 4: 38, 3: 37, 2: 3, 1: 0 },
+    },
+    {
+      name: "Facilitator",
+      avg: 3.82,
+      breakdown: { 4: 64, 3: 14, 2: 0, 1: 0 },
+    },
+    {
+      name: "Relevance to Women Entrepreneurs",
+      avg: 3.81,
+      breakdown: { 4: 63, 3: 15, 2: 0, 1: 0 },
+    },
+    {
+      name: "Overall Experience",
+      avg: 3.72,
+      breakdown: { 4: 57, 3: 20, 2: 1, 1: 0 },
+    },
+  ],
+  topFeedback: {
+    mostLiked: [
+      { label: "Introduction to new AI tools (Gemini, Copy.ai, etc.)", count: 27 },
+      { label: "Practical hands-on activities", count: 14 },
+      { label: "Networking & ice-breaking sessions", count: 8 },
+      { label: "Facilitator's delivery & energy", count: 6 },
+    ],
+    mostChallenging: [
+      { label: "Need more time for learning & practice", count: 24 },
+      { label: "Session pace too fast", count: 8 },
+      { label: "Internet connection issues", count: 4 },
+    ],
+    planToUse: [
+      { label: "Copywriting & content creation (Copy.ai)", count: 20 },
+      { label: "Gemini for business tasks", count: 19 },
+      { label: "AI video creation", count: 12 },
+      { label: "Facebook Business Suite / Meta", count: 10 },
+    ],
+    improvements: [
+      { label: "Longer session duration / 2-day program", count: 15 },
+      { label: "More hands-on practical activities", count: 12 },
+      { label: "Provide reference materials / notes", count: 5 },
+    ],
+  },
+};
