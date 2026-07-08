@@ -6,8 +6,9 @@ import Methodology from "./components/Methodology";
 import Impact from "./components/Impact";
 import KeyFindings from "./components/KeyFindings";
 import PolicyRecommendations from "./components/PolicyRecommendations";
-import Publications from "./components/Publications";
+import RecommendedTraining from "./components/RecommendedTraining";
 import SkillAdoption from "./components/SkillAdoption";
+import FeedbackInsights from "./components/FeedbackInsights";
 import DashboardIntro from "./components/DashboardIntro";
 import Dashboard from "./components/Dashboard";
 import CTA from "./components/CTA";
@@ -25,8 +26,9 @@ function App() {
       <Impact />
       <KeyFindings />
       <PolicyRecommendations />
-      <Publications />
+      <RecommendedTraining />
       <SkillAdoption />
+      <FeedbackInsights />
       <DashboardIntro />
       <div id="dashboard">
         <Dashboard />

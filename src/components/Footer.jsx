@@ -8,7 +8,7 @@ const columns = [
       { label: "About", href: "#research" },
       { label: "Objectives", href: "#objectives" },
       { label: "Methodology", href: "#methodology" },
-      { label: "Publications", href: "#publications" },
+      { label: "Feedback", href: "#feedback-insights" },
     ],
   },
   {

@@ -213,38 +213,53 @@ export default function SkillAdoption() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {[
-            { icon: <Lightbulb size={20} />, title: "What Participants Liked Most", color: "bg-blue-50", textColor: "text-blue-600", bgColor: "bg-blue-50", badgeBg: "bg-blue-50", badgeText: "text-blue-600", data: data.topFeedback.mostLiked },
-            { icon: <TrendingDown size={20} />, title: "Key Challenges", color: "bg-red-50", textColor: "text-red-500", bgColor: "bg-red-50", badgeBg: "bg-red-50", badgeText: "text-red-500", data: data.topFeedback.mostChallenging },
-            { icon: <Target size={20} />, title: "Planned AI Actions", color: "bg-emerald-50", textColor: "text-emerald-600", bgColor: "bg-emerald-50", badgeBg: "bg-emerald-50", badgeText: "text-emerald-600", data: data.topFeedback.planToUse },
-            { icon: <MessageSquare size={20} />, title: "Suggestions for Improvement", color: "bg-orange-50", textColor: "text-orange-500", bgColor: "bg-orange-50", badgeBg: "bg-orange-50", badgeText: "text-orange-500", data: data.topFeedback.improvements },
-          ].map((section, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="card-premium p-7"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-10 h-10 rounded-xl ${section.color} flex items-center justify-center ${section.textColor}`}>
-                  {section.icon}
-                </div>
-                <h4 className="font-bold text-gray-900">{section.title}</h4>
-              </div>
-              <div className="space-y-2.5">
-                {section.data.map((item, j) => (
-                  <div key={j} className="flex items-center justify-between py-1.5">
-                    <span className="text-sm text-gray-600">{item.label}</span>
-                    <span className={`text-xs font-bold ${section.badgeText} ${section.badgeBg} px-3 py-1 rounded-full`}>
-                      {item.count}
-                    </span>
+          {(() => {
+            const TOTAL = data.totalParticipants;
+            const normalizeTop3 = (items) => {
+              const top3 = items.slice(0, 3);
+              const sum = top3.reduce((acc, i) => acc + i.count, 0);
+              const other = TOTAL - sum;
+              if (other > 0) return [...top3, { label: "Other responses", count: other, isOther: true }];
+              return top3;
+            };
+            const sections = [
+              { icon: <Lightbulb size={20} />, title: "What Participants Liked Most", color: "bg-blue-50", textColor: "text-blue-600", badgeBg: "bg-blue-50", badgeText: "text-blue-600", data: normalizeTop3(data.topFeedback.mostLiked) },
+              { icon: <TrendingDown size={20} />, title: "Key Challenges", color: "bg-red-50", textColor: "text-red-500", badgeBg: "bg-red-50", badgeText: "text-red-500", data: normalizeTop3(data.topFeedback.mostChallenging) },
+              { icon: <Target size={20} />, title: "Planned AI Actions", color: "bg-emerald-50", textColor: "text-emerald-600", badgeBg: "bg-emerald-50", badgeText: "text-emerald-600", data: normalizeTop3(data.topFeedback.planToUse) },
+              { icon: <MessageSquare size={20} />, title: "Suggestions for Improvement", color: "bg-orange-50", textColor: "text-orange-500", badgeBg: "bg-orange-50", badgeText: "text-orange-500", data: normalizeTop3(data.topFeedback.improvements) },
+            ];
+            return sections.map((section, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="card-premium p-7"
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className={`w-10 h-10 rounded-xl ${section.color} flex items-center justify-center ${section.textColor}`}>
+                    {section.icon}
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  <h4 className="font-bold text-gray-900">{section.title}</h4>
+                </div>
+                <div className="space-y-2.5">
+                  {section.data.map((item, j) => (
+                    <div key={j} className="flex items-center justify-between py-1.5">
+                      <span className={`text-sm ${item.isOther ? "text-gray-400 italic" : "text-gray-600"}`}>{item.label}</span>
+                      <span className={`text-xs font-bold ${item.isOther ? "text-gray-400 bg-gray-100" : `${section.badgeText} ${section.badgeBg}`} px-3 py-1 rounded-full`}>
+                        {item.count}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
+                  <span>Total participants</span>
+                  <span className="font-bold text-gray-600">{TOTAL}</span>
+                </div>
+              </motion.div>
+            ));
+          })()}
         </div>
       </div>
     </section>
