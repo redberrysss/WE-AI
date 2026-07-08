@@ -9,7 +9,7 @@ import { processFeedback } from "../data/feedbackInsightsData";
 
 export default function FeedbackInsights() {
   const [source, setSource] = useState("padlet");
-  const data = useMemo(() => processFeedback(), []);
+  const data = useMemo(() => processFeedback(source), [source]);
 
   const totalFeedback = data.total;
   const positivePct = totalFeedback > 0 ? Math.round((data.positive / totalFeedback) * 100) : 0;
@@ -18,9 +18,9 @@ export default function FeedbackInsights() {
 
   const summaryCards = [
     { label: "Total Feedback", value: data.total, icon: <MessageSquare size={18} />, color: "bg-blue-50", text: "text-blue-600" },
-    { label: "Positive", value: data.positive, icon: <ThumbsUp size={18} />, color: "bg-emerald-50", text: "text-emerald-600", secondary: `${positivePct}%` },
-    { label: "Neutral", value: data.neutral, icon: <Minus size={18} />, color: "bg-amber-50", text: "text-amber-600", secondary: `${neutralPct}%` },
-    { label: "Negative", value: data.negative, icon: <ThumbsDown size={18} />, color: "bg-red-50", text: "text-red-600", secondary: `${negativePct}%` },
+    { label: "Positive", value: data.positive, icon: <ThumbsUp size={18} />, color: "bg-blue-50", text: "text-blue-600", secondary: `${positivePct}%` },
+    { label: "Neutral", value: data.neutral, icon: <Minus size={18} />, color: "bg-yellow-50", text: "text-yellow-600", secondary: `${neutralPct}%` },
+    { label: "Negative", value: data.negative, icon: <ThumbsDown size={18} />, color: "bg-yellow-50", text: "text-yellow-600", secondary: `${negativePct}%` },
   ];
 
   const maxTopicCount = Math.max(...data.topics.map(t => t.count), 1);
@@ -113,21 +113,21 @@ export default function FeedbackInsights() {
             <p className="text-sm text-gray-500 mb-6">Analysis of participant feedback sentiment across all sources</p>
             <div className="flex gap-1.5 h-3 mb-6 rounded-full overflow-hidden">
               <motion.div
-                className="bg-emerald-500 h-full"
+                className="bg-blue-500 h-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${positivePct}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               />
               <motion.div
-                className="bg-amber-400 h-full"
+                className="bg-yellow-400 h-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${neutralPct}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               />
               <motion.div
-                className="bg-red-400 h-full"
+                className="bg-yellow-600 h-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${negativePct}%` }}
                 viewport={{ once: true }}
@@ -136,15 +136,15 @@ export default function FeedbackInsights() {
             </div>
             <div className="flex gap-6 text-sm">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
                 <span className="text-gray-600">Positive ({positivePct}%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
                 <span className="text-gray-600">Neutral ({neutralPct}%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-600" />
                 <span className="text-gray-600">Negative ({negativePct}%)</span>
               </div>
             </div>
@@ -158,11 +158,11 @@ export default function FeedbackInsights() {
             className="card-premium p-7"
           >
             <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-              <Lightbulb size={18} className="text-amber-500" />
+              <Lightbulb size={18} className="text-yellow-500" />
               AI Summary
             </h3>
             <p className="text-sm text-gray-500 mb-4">Executive summary generated from feedback analysis</p>
-            <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
+            <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-yellow-50 border border-yellow-100">
               <Sparkles size={16} className="text-blue-600 mb-2" />
               <p className="text-sm text-gray-700 leading-relaxed">{data.summary}</p>
             </div>
@@ -189,7 +189,7 @@ export default function FeedbackInsights() {
                   </div>
                   <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                      className="h-full rounded-full bg-gradient-to-r from-blue-500 to-yellow-400"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${(topic.count / maxTopicCount) * 100}%` }}
                       viewport={{ once: true }}
@@ -209,7 +209,7 @@ export default function FeedbackInsights() {
             className="card-premium p-7"
           >
             <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-              <Filter size={18} className="text-purple-500" />
+              <Filter size={18} className="text-yellow-500" />
               Top Keywords
             </h3>
             <p className="text-sm text-gray-500 mb-6">Most frequently mentioned terms across all feedback</p>
@@ -244,7 +244,7 @@ export default function FeedbackInsights() {
             className="card-premium p-7"
           >
             <h3 className="font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <MessageSquare size={18} className="text-amber-500" />
+              <MessageSquare size={18} className="text-yellow-500" />
               Participant Suggestions
             </h3>
             <div className="space-y-3">
@@ -268,7 +268,7 @@ export default function FeedbackInsights() {
             className="card-premium p-7"
           >
             <h3 className="font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <Target size={18} className="text-emerald-500" />
+              <Target size={18} className="text-blue-500" />
               Recommended Future Training
             </h3>
             <div className="space-y-3">
@@ -277,17 +277,17 @@ export default function FeedbackInsights() {
                   <div className="flex items-center justify-between mb-1.5">
                     <h4 className="font-semibold text-gray-900 text-sm">{rec.name}</h4>
                     <span className={`px-2 py-0.5 rounded-full text-[0.65rem] font-bold ${
-                      rec.priority === "High" ? "bg-red-50 text-red-600" : "bg-amber-50 text-amber-600"
+                      rec.priority === "High" ? "bg-yellow-50 text-yellow-600" : "bg-blue-50 text-blue-600"
                     }`}>
                       {rec.priority}
                     </span>
                   </div>
                   <p className="text-xs text-gray-500 leading-relaxed">{rec.reason}</p>
                   <div className="flex items-center gap-2 mt-2">
-                    <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-emerald-500 rounded-full" style={{ width: `${rec.confidence}%` }} />
-                    </div>
-                    <span className="text-[0.6rem] font-bold text-emerald-600">{rec.confidence}% match</span>
+                      <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-blue-500 rounded-full" style={{ width: `${rec.confidence}%` }} />
+                      </div>
+                      <span className="text-[0.6rem] font-bold text-blue-600">{rec.confidence}% match</span>
                   </div>
                 </div>
               ))}

@@ -39,7 +39,7 @@ export default function Navbar() {
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-600 to-purple-500" />
+            <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-600 to-yellow-400" />
             <span>WE-AI</span>
           </motion.a>
 

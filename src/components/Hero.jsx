@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, ChevronDown } from "lucide-react";
-import { AIIllustration } from "./Illustrations";
+import { ArrowRight, ChevronDown } from "lucide-react";
+
+import heroBg from "../assets/hero-bg.png";
 
 function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -39,7 +40,7 @@ function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
 }
 
 const stats = [
-  { value: 152, suffix: "+", label: "Survey Respondents" },
+  { value: 230, suffix: "+", label: "Survey Respondents" },
   { value: 16, suffix: "", label: "States Covered" },
   { value: 6, suffix: "", label: "Business Sectors" },
   { value: 78, suffix: "+", label: "Workshop Participants" },
@@ -47,13 +48,14 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-600/10 via-transparent to-transparent" />
-      <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-slate-900/40 z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/30 via-transparent to-transparent z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent z-10" />
+      <div className="absolute inset-0 z-10" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)", backgroundSize: "32px 32px" }} />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-24 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,7 +78,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight mb-6"
             >
               AI Readiness & Adoption Among{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-yellow-400 bg-clip-text text-transparent">
                 Women-Led MSMEs
               </span>{" "}
               in Malaysia
@@ -107,32 +109,9 @@ export default function Hero() {
                 Explore Dashboard
                 <ArrowRight size={18} />
               </motion.a>
-              <motion.a
-                href="#research"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="btn-secondary text-base px-7 py-3.5 text-white border-white/20 hover:border-white/40 hover:text-white"
-              >
-                View Research
-                <BarChart3 size={18} />
-              </motion.a>
+
             </motion.div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="hidden lg:block"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl" />
-              <div className="relative">
-                <AIIllustration className="w-full max-w-lg mx-auto" />
-              </div>
-            </div>
-          </motion.div>
-        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -152,7 +131,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 z-20"
       >
         <ChevronDown size={24} />
       </motion.div>

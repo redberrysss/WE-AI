@@ -17,10 +17,23 @@ export default function HorizontalBarChartCard({ title, data }) {
         <BarChart
           data={data}
           layout="vertical"
-          margin={{ top: 20, right: 30, left: 80, bottom: 20 }}
+          margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
         >
           <XAxis type="number" />
-          <YAxis dataKey="name" type="category" width={75} />
+          <YAxis
+            dataKey="name"
+            type="category"
+            width={160}
+            interval={0}
+            tick={({ x, y, payload }) => {
+              const cx = x != null ? x - 80 : 0;
+              return (
+                <text x={cx} y={y} textAnchor="middle" fontSize={11} fill="#64748B">
+                  {payload.value ?? ""}
+                </text>
+              );
+            }}
+          />
           <Tooltip />
 
           <Bar dataKey="value" fill="#2563EB" radius={[0, 8, 8, 0]}>

@@ -34,9 +34,9 @@ const objectives = [
 
 const colorMap = {
   blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-100", grad: "from-blue-500 to-blue-600" },
-  purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-100", grad: "from-purple-500 to-purple-600" },
-  indigo: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-100", grad: "from-indigo-500 to-indigo-600" },
-  violet: { bg: "bg-violet-50", text: "text-violet-600", border: "border-violet-100", grad: "from-violet-500 to-violet-600" },
+  purple: { bg: "bg-yellow-50", text: "text-yellow-600", border: "border-yellow-100", grad: "from-yellow-400 to-yellow-500" },
+  indigo: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-100", grad: "from-blue-500 to-blue-600" },
+  violet: { bg: "bg-yellow-50", text: "text-yellow-600", border: "border-yellow-100", grad: "from-yellow-400 to-yellow-500" },
 };
 
 export default function ResearchObjectives() {

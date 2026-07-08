@@ -42,7 +42,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2.5 mb-5">
-              <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-500 to-purple-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-500 to-yellow-400" />
               <span className="text-xl font-bold">WE-AI</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">

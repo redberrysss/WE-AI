@@ -54,11 +54,11 @@ const findings = [
 
 const colorMap = {
   blue: { bg: "bg-blue-50", text: "text-blue-600", badge: "bg-blue-100" },
-  purple: { bg: "bg-purple-50", text: "text-purple-600", badge: "bg-purple-100" },
-  green: { bg: "bg-emerald-50", text: "text-emerald-600", badge: "bg-emerald-100" },
-  orange: { bg: "bg-orange-50", text: "text-orange-600", badge: "bg-orange-100" },
-  indigo: { bg: "bg-indigo-50", text: "text-indigo-600", badge: "bg-indigo-100" },
-  rose: { bg: "bg-rose-50", text: "text-rose-600", badge: "bg-rose-100" },
+  purple: { bg: "bg-yellow-50", text: "text-yellow-600", badge: "bg-yellow-100" },
+  green: { bg: "bg-blue-50", text: "text-blue-600", badge: "bg-blue-100" },
+  orange: { bg: "bg-yellow-50", text: "text-yellow-600", badge: "bg-yellow-100" },
+  indigo: { bg: "bg-blue-50", text: "text-blue-600", badge: "bg-blue-100" },
+  rose: { bg: "bg-yellow-50", text: "text-yellow-600", badge: "bg-yellow-100" },
 };
 
 export default function KeyFindings() {

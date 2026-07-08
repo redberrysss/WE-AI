@@ -4,11 +4,11 @@ export function AIIllustration({ className = "w-full h-full" }) {
       <defs>
         <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#2563EB" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.08" />
+          <stop offset="100%" stopColor="#EAB308" stopOpacity="0.08" />
         </linearGradient>
         <linearGradient id="aiGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#2563EB" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#EAB308" stopOpacity="0.15" />
         </linearGradient>
         <filter id="glow">
           <feGaussianBlur stdDeviation="3" result="blur" />
@@ -23,7 +23,7 @@ export function AIIllustration({ className = "w-full h-full" }) {
       <circle cx="200" cy="200" r="80" fill="url(#aiGrad)" />
       <g filter="url(#glow)">
         <circle cx="200" cy="200" r="12" fill="#2563EB" opacity="0.6" />
-        <circle cx="200" cy="200" r="6" fill="#8B5CF6" />
+        <circle cx="200" cy="200" r="6" fill="#EAB308" />
       </g>
       {[
         [200, 200, 280, 120],
@@ -40,10 +40,10 @@ export function AIIllustration({ className = "w-full h-full" }) {
       {[
         { cx: 280, cy: 120, r: 6, color: "#2563EB", delay: 0 },
         { cx: 120, cy: 120, r: 5, color: "#3B82F6", delay: 0.2 },
-        { cx: 280, cy: 280, r: 7, color: "#8B5CF6", delay: 0.4 },
+        { cx: 280, cy: 280, r: 7, color: "#EAB308", delay: 0.4 },
         { cx: 120, cy: 280, r: 5, color: "#2563EB", delay: 0.6 },
         { cx: 320, cy: 200, r: 6, color: "#3B82F6", delay: 0.8 },
-        { cx: 80, cy: 200, r: 4, color: "#8B5CF6", delay: 1.0 },
+        { cx: 80, cy: 200, r: 4, color: "#EAB308", delay: 1.0 },
         { cx: 200, cy: 80, r: 5, color: "#2563EB", delay: 1.2 },
         { cx: 200, cy: 320, r: 6, color: "#3B82F6", delay: 1.4 },
       ].map((node, i) => (
@@ -58,7 +58,7 @@ export function AIIllustration({ className = "w-full h-full" }) {
         </circle>
       ))}
       {[60, 100, 140, 260, 300, 340].map((x, i) => (
-        <circle key={`d2-${i}`} cx={x} cy={320 + (i % 2) * 20} r="2" fill="#8B5CF6" opacity="0.3">
+        <circle key={`d2-${i}`} cx={x} cy={320 + (i % 2) * 20} r="2" fill="#EAB308" opacity="0.3">
           <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" begin={`${i * 0.3 + 2}s`} repeatCount="indefinite" />
         </circle>
       ))}
@@ -75,8 +75,8 @@ export function AnalyticsIllustration({ className = "w-full h-full" }) {
           <stop offset="100%" stopColor="#1D4ED8" />
         </linearGradient>
         <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#7C3AED" />
+          <stop offset="0%" stopColor="#EAB308" />
+          <stop offset="100%" stopColor="#CA8A04" />
         </linearGradient>
         <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#3B82F6" />
@@ -125,7 +125,7 @@ export function AnalyticsIllustration({ className = "w-full h-full" }) {
       <text x="312" y="260" fontSize="10" fill="#94A3B8" textAnchor="middle">IoT</text>
       <rect x="24" y="280" width="352" height="1" fill="#E2E8F0" />
       <circle cx="24" cy="216" r="3" fill="#2563EB" opacity="0.4" />
-      <circle cx="24" cy="24" r="4" fill="#8B5CF6" opacity="0.6" />
+      <circle cx="24" cy="24" r="4" fill="#EAB308" opacity="0.6" />
     </svg>
   );
 }
@@ -136,26 +136,26 @@ export function WomenEmpowermentIllustration({ className = "w-full h-full" }) {
       <defs>
         <linearGradient id="weGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#2563EB" stopOpacity="0.12" />
-          <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="#EAB308" stopOpacity="0.06" />
         </linearGradient>
         <linearGradient id="circGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#2563EB" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#EAB308" stopOpacity="0.1" />
         </linearGradient>
       </defs>
       <rect width="400" height="360" rx="32" fill="url(#weGrad)" />
       <circle cx="200" cy="180" r="130" fill="url(#circGrad)" />
       <circle cx="200" cy="180" r="100" stroke="#2563EB" strokeWidth="0.5" opacity="0.3" fill="none" strokeDasharray="4 4" />
-      <circle cx="200" cy="180" r="140" stroke="#8B5CF6" strokeWidth="0.5" opacity="0.2" fill="none" strokeDasharray="3 6" />
+      <circle cx="200" cy="180" r="140" stroke="#EAB308" strokeWidth="0.5" opacity="0.2" fill="none" strokeDasharray="3 6" />
       <g transform="translate(200, 145)">
         <circle cx="0" cy="-20" r="18" fill="#2563EB" opacity="0.15" />
         <path d="M-12 -12 Q0 8 12 -12 Q0 -2 -12 -12Z" fill="#2563EB" opacity="0.25" />
         <path d="M0 -5 L0 25" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" opacity="0.35" />
         <path d="M-18 10 Q0 25 18 10" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.3" />
-        <path d="M-12 25 Q0 40 12 25" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.25" />
+        <path d="M-12 25 Q0 40 12 25" stroke="#EAB308" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.25" />
       </g>
       <circle cx="160" cy="200" r="20" fill="#2563EB" opacity="0.08" />
-      <circle cx="240" cy="200" r="20" fill="#8B5CF6" opacity="0.08" />
+      <circle cx="240" cy="200" r="20" fill="#EAB308" opacity="0.08" />
       <circle cx="200" cy="240" r="20" fill="#3B82F6" opacity="0.08" />
       {[
         { x: 100, y: 280, r: 3 },
@@ -170,7 +170,7 @@ export function WomenEmpowermentIllustration({ className = "w-full h-full" }) {
         </circle>
       ))}
       {[80, 120, 280, 320].map((x, i) => (
-        <circle key={`c-${i}`} cx={x} cy={60 + i * 20} r="1.5" fill="#8B5CF6" opacity="0.3">
+        <circle key={`c-${i}`} cx={x} cy={60 + i * 20} r="1.5" fill="#EAB308" opacity="0.3">
           <animate attributeName="opacity" values="0.1;0.6;0.1" dur={`${3 + i * 0.4}s`} repeatCount="indefinite" />
         </circle>
       ))}
@@ -204,11 +204,11 @@ export function ResearchIllustration({ className = "w-full h-full" }) {
       <rect x="238" y="80" width="48" height="3" rx="1.5" fill="#2563EB" opacity="0.5" />
       <rect x="238" y="90" width="36" height="3" rx="1.5" fill="#94A3B8" opacity="0.4" />
       <rect x="238" y="100" width="42" height="3" rx="1.5" fill="#94A3B8" opacity="0.4" />
-      <rect x="238" y="116" width="24" height="3" rx="1.5" fill="#8B5CF6" opacity="0.5" />
+      <rect x="238" y="116" width="24" height="3" rx="1.5" fill="#EAB308" opacity="0.5" />
       <rect x="238" y="126" width="30" height="3" rx="1.5" fill="#94A3B8" opacity="0.4" />
       <rect x="238" y="136" width="18" height="3" rx="1.5" fill="#2563EB" opacity="0.3" />
       <rect x="40" y="240" width="152" height="64" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="1" />
-      <rect x="56" y="256" width="80" height="6" rx="3" fill="#8B5CF6" opacity="0.5" />
+      <rect x="56" y="256" width="80" height="6" rx="3" fill="#EAB308" opacity="0.5" />
       <rect x="56" y="270" width="120" height="5" rx="2.5" fill="#94A3B8" opacity="0.35" />
       <rect x="56" y="282" width="96" height="5" rx="2.5" fill="#E2E8F0" />
       <rect x="208" y="240" width="152" height="64" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="1" />
@@ -216,7 +216,7 @@ export function ResearchIllustration({ className = "w-full h-full" }) {
       <rect x="224" y="270" width="110" height="5" rx="2.5" fill="#94A3B8" opacity="0.35" />
       <rect x="224" y="282" width="80" height="5" rx="2.5" fill="#E2E8F0" />
       <circle cx="372" cy="36" r="4" fill="#2563EB" opacity="0.2" />
-      <circle cx="28" cy="340" r="3" fill="#8B5CF6" opacity="0.15" />
+      <circle cx="28" cy="340" r="3" fill="#EAB308" opacity="0.15" />
     </svg>
   );
 }
@@ -228,7 +228,7 @@ export function MalaysiaMapIllustration({ className = "w-full h-full" }) {
       <rect x="0" y="0" width="400" height="300" rx="24" stroke="#E2E8F0" strokeWidth="1" />
       <path d="M120 40 L160 50 L180 70 L170 100 L190 120 L200 140 L180 160 L160 170 L140 180 L120 170 L100 150 L80 130 L70 100 L80 70 L100 50Z" fill="#2563EB" opacity="0.08" stroke="#2563EB" strokeWidth="1.5" strokeOpacity="0.3" />
       <path d="M220 60 L260 55 L280 70 L290 90 L270 110 L250 105 L230 85Z" fill="#3B82F6" opacity="0.08" stroke="#3B82F6" strokeWidth="1.5" strokeOpacity="0.3" />
-      <path d="M290 100 L340 90 L350 110 L340 130 L310 140 L290 120Z" fill="#8B5CF6" opacity="0.08" stroke="#8B5CF6" strokeWidth="1.5" strokeOpacity="0.3" />
+      <path d="M290 100 L340 90 L350 110 L340 130 L310 140 L290 120Z" fill="#EAB308" opacity="0.08" stroke="#EAB308" strokeWidth="1.5" strokeOpacity="0.3" />
       {[
         { cx: 130, cy: 100, label: "KL" },
         { cx: 150, cy: 80, label: "Penang" },
@@ -256,7 +256,7 @@ export function DataInsightsIllustration({ className = "w-full h-full" }) {
       <defs>
         <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#EFF6FF" />
-          <stop offset="100%" stopColor="#F5F3FF" />
+          <stop offset="100%" stopColor="#FEFCE8" />
         </linearGradient>
       </defs>
       <rect width="400" height="340" rx="24" fill="url(#dGrad)" />
@@ -266,11 +266,11 @@ export function DataInsightsIllustration({ className = "w-full h-full" }) {
       <circle cx="80" cy="80" r="6" fill="#2563EB" opacity="0.3" />
       <text x="80" y="148" textAnchor="middle" fontSize="28" fontWeight="800" fill="#2563EB">78%</text>
       <text x="80" y="164" textAnchor="middle" fontSize="11" fill="#64748B" fontWeight="500">AI Awareness</text>
-      <circle cx="320" cy="80" r="40" fill="#8B5CF6" opacity="0.06" />
-      <circle cx="320" cy="80" r="28" fill="#8B5CF6" opacity="0.1" />
-      <circle cx="320" cy="80" r="16" fill="#8B5CF6" opacity="0.15" />
-      <circle cx="320" cy="80" r="6" fill="#8B5CF6" opacity="0.3" />
-      <text x="320" y="148" textAnchor="middle" fontSize="28" fontWeight="800" fill="#8B5CF6">62%</text>
+      <circle cx="320" cy="80" r="40" fill="#EAB308" opacity="0.06" />
+      <circle cx="320" cy="80" r="28" fill="#EAB308" opacity="0.1" />
+      <circle cx="320" cy="80" r="16" fill="#EAB308" opacity="0.15" />
+      <circle cx="320" cy="80" r="6" fill="#EAB308" opacity="0.3" />
+      <text x="320" y="148" textAnchor="middle" fontSize="28" fontWeight="800" fill="#EAB308">62%</text>
       <text x="320" y="164" textAnchor="middle" fontSize="11" fill="#64748B" fontWeight="500">AI Adoption</text>
       <rect x="40" y="190" width="320" height="1" fill="#E2E8F0" />
       <rect x="40" y="210" width="240" height="40" rx="8" fill="white" stroke="#E2E8F0" strokeWidth="1" />
@@ -279,10 +279,10 @@ export function DataInsightsIllustration({ className = "w-full h-full" }) {
       <rect x="56" y="234" width="120" height="4" rx="2" fill="#94A3B8" opacity="0.3" />
       <rect x="240" y="216" width="24" height="28" rx="4" fill="#2563EB" opacity="0.1" />
       <text x="252" y="234" textAnchor="middle" fontSize="10" fill="#2563EB" fontWeight="700">PDF</text>
-      <rect x="56" y="272" width="200" height="6" rx="3" fill="#8B5CF6" opacity="0.5" />
+      <rect x="56" y="272" width="200" height="6" rx="3" fill="#EAB308" opacity="0.5" />
       <rect x="56" y="284" width="140" height="4" rx="2" fill="#94A3B8" opacity="0.3" />
-      <rect x="280" y="268" width="64" height="24" rx="6" fill="#8B5CF6" opacity="0.12" />
-      <text x="312" y="284" textAnchor="middle" fontSize="9" fill="#8B5CF6" fontWeight="600">Download</text>
+      <rect x="280" y="268" width="64" height="24" rx="6" fill="#EAB308" opacity="0.12" />
+      <text x="312" y="284" textAnchor="middle" fontSize="9" fill="#EAB308" fontWeight="600">Download</text>
     </svg>
   );
 }

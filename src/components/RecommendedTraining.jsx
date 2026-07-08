@@ -40,9 +40,9 @@ function generateRecommendations(skills, totalParticipants) {
 }
 
 const priorityColors = {
-  High: { bg: "bg-red-50", text: "text-red-600", dot: "bg-red-500", border: "border-red-100" },
-  Medium: { bg: "bg-amber-50", text: "text-amber-600", dot: "bg-amber-500", border: "border-amber-100" },
-  Low: { bg: "bg-emerald-50", text: "text-emerald-600", dot: "bg-emerald-500", border: "border-emerald-100" },
+  High: { bg: "bg-yellow-50", text: "text-yellow-600", dot: "bg-yellow-500", border: "border-yellow-100" },
+  Medium: { bg: "bg-blue-50", text: "text-blue-600", dot: "bg-blue-500", border: "border-blue-100" },
+  Low: { bg: "bg-blue-50", text: "text-blue-600", dot: "bg-blue-500", border: "border-blue-100" },
 };
 
 export default function RecommendedTraining() {
@@ -97,7 +97,7 @@ export default function RecommendedTraining() {
 
                 <div className="flex-1 mb-5">
                   <div className="flex items-start gap-2 mb-3">
-                    <Lightbulb size={15} className="text-amber-500 mt-0.5 shrink-0" />
+                    <Lightbulb size={15} className="text-yellow-500 mt-0.5 shrink-0" />
                     <p className="text-sm text-gray-500 leading-relaxed">{rec.reason}</p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function RecommendedTraining() {
                       <TrendingUp size={14} />
                       Improvement
                     </span>
-                    <span className="font-bold text-emerald-600">+{rec.improvement}%</span>
+                    <span className="font-bold text-blue-600">+{rec.improvement}%</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400 flex items-center gap-1.5">

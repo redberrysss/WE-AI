@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Users, TrendingUp, Cpu, ClipboardList } from "lucide-react";
+import { Users, TrendingUp, Cpu, Handshake } from "lucide-react";
 
-function Counter({ end, suffix = "", duration = 2000, label, icon, color }) {
+function Counter({ value: end, suffix = "", duration = 2000, label, icon, color }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -31,9 +31,9 @@ function Counter({ end, suffix = "", duration = 2000, label, icon, color }) {
 
   const colorMap = {
     blue: { bg: "bg-blue-50", text: "text-blue-600", from: "from-blue-600" },
-    purple: { bg: "bg-purple-50", text: "text-purple-600", from: "from-purple-600" },
-    indigo: { bg: "bg-indigo-50", text: "text-indigo-600", from: "from-indigo-600" },
-    green: { bg: "bg-emerald-50", text: "text-emerald-600", from: "from-emerald-600" },
+    yellow: { bg: "bg-yellow-50", text: "text-yellow-600", from: "from-yellow-500" },
+    indigo: { bg: "bg-blue-50", text: "text-blue-600", from: "from-blue-600" },
+    green: { bg: "bg-blue-50", text: "text-blue-600", from: "from-blue-600" },
   };
   const c = colorMap[color] || colorMap.blue;
 
@@ -52,10 +52,10 @@ function Counter({ end, suffix = "", duration = 2000, label, icon, color }) {
 
 export default function Impact() {
   const impacts = [
-    { value: 152, suffix: "+", label: "Women Entrepreneurs Engaged", icon: <Users size={22} />, color: "blue" },
-    { value: 89, suffix: "%", label: "Showing Digital Readiness", icon: <TrendingUp size={22} />, color: "purple" },
-    { value: 67, suffix: "%", label: "Ready for AI Adoption", icon: <Cpu size={22} />, color: "indigo" },
-    { value: 12, suffix: "", label: "Policy Recommendations", icon: <ClipboardList size={22} />, color: "green" },
+    { value: 230, suffix: "+", label: "Women Entrepreneurs Engaged", icon: <Users size={22} />, color: "blue" },
+    { value: 89, suffix: "%", label: "Showing Digital Readiness", icon: <TrendingUp size={22} />, color: "yellow" },
+    { value: 67, suffix: "%", label: "Ready for AI Adoption", icon: <Cpu size={22} />, color: "blue" },
+    { value: 15, suffix: "+", label: "Collaborators & Partners", icon: <Handshake size={22} />, color: "blue" },
   ];
 
   return (

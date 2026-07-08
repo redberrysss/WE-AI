@@ -62,7 +62,7 @@ export default function Dashboard() {
   const businessSizeData = countBy("Berapa orang yang bekerja dalam perniagaan anda, termasuk anda sendiri?");
   const sectorData = countBy("Apakah sektor utama perniagaan anda?");
   const educationData = countBy("Tahap Pendidikan Tertinggi");
-  const stateData = countBy("Negeri Operasi Perniagaan");
+  const stateData = countBy("Negeri Operasi Perniagaan").sort((a, b) => b.value - a.value);
 
   return (
     <main className="dashboard">

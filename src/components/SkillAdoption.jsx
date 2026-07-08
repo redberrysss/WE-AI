@@ -48,7 +48,7 @@ function ScoreGauge({ before, after, max }) {
           <text x="60" y="48" textAnchor="middle" fontSize="12" fill="#64748B" fontWeight="600">AFTER</text>
           <text x="60" y="72" textAnchor="middle" fontSize="26" fill="#2563EB" fontWeight="800">{after.toFixed(1)}</text>
         </svg>
-        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-emerald-50 text-emerald-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap border border-emerald-100">
+        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap border border-blue-100">
           +{improvement.toFixed(1)} improvement
         </div>
       </div>
@@ -224,9 +224,9 @@ export default function SkillAdoption() {
             };
             const sections = [
               { icon: <Lightbulb size={20} />, title: "What Participants Liked Most", color: "bg-blue-50", textColor: "text-blue-600", badgeBg: "bg-blue-50", badgeText: "text-blue-600", data: normalizeTop3(data.topFeedback.mostLiked) },
-              { icon: <TrendingDown size={20} />, title: "Key Challenges", color: "bg-red-50", textColor: "text-red-500", badgeBg: "bg-red-50", badgeText: "text-red-500", data: normalizeTop3(data.topFeedback.mostChallenging) },
-              { icon: <Target size={20} />, title: "Planned AI Actions", color: "bg-emerald-50", textColor: "text-emerald-600", badgeBg: "bg-emerald-50", badgeText: "text-emerald-600", data: normalizeTop3(data.topFeedback.planToUse) },
-              { icon: <MessageSquare size={20} />, title: "Suggestions for Improvement", color: "bg-orange-50", textColor: "text-orange-500", badgeBg: "bg-orange-50", badgeText: "text-orange-500", data: normalizeTop3(data.topFeedback.improvements) },
+              { icon: <TrendingDown size={20} />, title: "Key Challenges", color: "bg-yellow-50", textColor: "text-yellow-600", badgeBg: "bg-yellow-50", badgeText: "text-yellow-600", data: normalizeTop3(data.topFeedback.mostChallenging) },
+              { icon: <Target size={20} />, title: "Planned AI Actions", color: "bg-blue-50", textColor: "text-blue-600", badgeBg: "bg-blue-50", badgeText: "text-blue-600", data: normalizeTop3(data.topFeedback.planToUse) },
+              { icon: <MessageSquare size={20} />, title: "Suggestions for Improvement", color: "bg-yellow-50", textColor: "text-yellow-600", badgeBg: "bg-yellow-50", badgeText: "text-yellow-600", data: normalizeTop3(data.topFeedback.improvements) },
             ];
             return sections.map((section, i) => (
               <motion.div

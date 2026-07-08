@@ -1,4 +1,4 @@
-const rawFeedback = [
+const padletFeedback = [
   "Saya sangat suka sesi ini. Banyak belajar tentang AI tools.",
   "Terima kasih, trainer sangat helpful. Saya harap ada sesi lanjutan.",
   "Saya nak belajar lebih pasal digital marketing guna AI.",
@@ -9,6 +9,9 @@ const rawFeedback = [
   "Minta lebih banyak contoh kes guna AI dalam bisnes.",
   "Best! Dapat jumpa ramai usahawan lain dan jaringan bisnes.",
   "Saya suka cara trainer terangkan, mudah faham.",
+];
+
+const mentimeterFeedback = [
   "Nak lebih sesi pasal Canva and social media marketing.",
   "Pembelajaran secara hands-on sangat membantu saya.",
   "Saya berharap ada modul tentang kewangan dan AI.",
@@ -24,6 +27,9 @@ const rawFeedback = [
   "Topik AI untuk bisnes sangat relevan dengan saya.",
   "Saya nak belajar lebih dalam tentang AI video creation.",
   "Sesi ini patut diadakan lebih kerap untuk usahawan wanita.",
+];
+
+const surveyFeedback = [
   "Saya kurang faham bahagian teknikal, perlu penjelasan lanjut.",
   "Aplikasi AI untuk pengurusan inventory sangat menarik.",
   "Saya suka pendekatan trainer yang sabar dan mesra.",
@@ -50,6 +56,12 @@ const rawFeedback = [
   "Saya suka kombinasi teori dan praktikal dalam sesi ini.",
   "Nak lebih banyak template AI prompts yang siap guna.",
 ];
+
+const sourceData = {
+  padlet: padletFeedback,
+  mentimeter: mentimeterFeedback,
+  survey: surveyFeedback,
+};
 
 function cleanText(text) {
   return text.trim().replace(/[^\w\s]/g, "").replace(/\s+/g, " ").trim();
@@ -123,7 +135,8 @@ function extractSuggestions(texts) {
   return suggestions.sort((a, b) => b.count - a.count);
 }
 
-export function processFeedback(rawData = rawFeedback) {
+export function processFeedback(source = "padlet") {
+  const rawData = sourceData[source] || sourceData.padlet;
   const cleaned = rawData.filter(t => t.trim().length > 0).map(cleanText);
   const unique = [...new Set(cleaned)];
   const withSentiment = unique.map(text => ({ text, sentiment: analyzeSentiment(text) }));
@@ -172,4 +185,4 @@ export function processFeedback(rawData = rawFeedback) {
   };
 }
 
-export const sampleFeedback = rawFeedback;
+export const sampleFeedback = sourceData;

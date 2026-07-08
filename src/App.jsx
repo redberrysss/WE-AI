@@ -5,7 +5,7 @@ import ResearchObjectives from "./components/ResearchObjectives";
 import Methodology from "./components/Methodology";
 import Impact from "./components/Impact";
 import KeyFindings from "./components/KeyFindings";
-import PolicyRecommendations from "./components/PolicyRecommendations";
+import Collaborators from "./components/Collaborators";
 import RecommendedTraining from "./components/RecommendedTraining";
 import SkillAdoption from "./components/SkillAdoption";
 import FeedbackInsights from "./components/FeedbackInsights";
@@ -25,7 +25,7 @@ function App() {
       <Methodology />
       <Impact />
       <KeyFindings />
-      <PolicyRecommendations />
+      <Collaborators />
       <RecommendedTraining />
       <SkillAdoption />
       <FeedbackInsights />
